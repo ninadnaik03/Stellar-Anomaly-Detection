@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real-Time Anomaly Detection in Stellar Spectra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<article class="paper">
+
+  <h1>Real-Time Anomaly Detection in Stellar Spectra Using Unsupervised Deep Learning</h1>
+
+  <p class="authors">
+    Ninad Naik<br>
+    Undergraduate Student, Gitam University
+  </p>
+
+ <p class="abstract">
+  <strong>Abstract.</strong>
+  Modern astronomical surveys generate massive volumes of stellar spectra,
+  making manual inspection of unusual objects impractical.
+  We present an unsupervised, real-time anomaly detection pipeline for stellar
+  spectra that learns normal spectral behavior directly from data and
+  automatically flags unusual candidates without requiring labels.
+  The system is evaluated on real Sloan Digital Sky Survey (SDSS) spectra and
+  demonstrates stable anomaly detection across repeated observation cycles,
+  identifying both physically distinct spectra and data-quality anomalies.
+</p>
+
+
+  <h2>1. Introduction</h2>
+  <p>
+    Large spectroscopic surveys such as the Sloan Digital Sky Survey (SDSS)
+    collect millions of stellar spectra.
+    Identifying rare or unusual objects within these datasets is a key scientific
+    challenge.
+    Traditional approaches rely on predefined classes or manual inspection,
+    which do not scale effectively.
+  </p>
+
+  <h2>2. Dataset</h2>
+  <p>
+    We use real optical stellar spectra from SDSS, covering wavelengths from
+    approximately 3800 Å to 9200 Å.
+    The data are unlabeled, motivating the use of unsupervised learning methods.
+  </p>
+
+  <h2>3. Methodology</h2>
+  <p>
+    Each spectrum is resampled onto a common wavelength grid and normalized.
+    A deep autoencoder is trained to learn compact latent representations of
+    stellar spectra.
+    Anomalies are detected using a combination of isolation-based methods applied
+    to the latent space and reconstruction error from the autoencoder.
+  </p>
+
+  <h2>4. Real-Time Pipeline</h2>
+  <p>
+    The trained model is deployed in a streaming-like setting where spectra are
+    processed sequentially.
+    Anomalies are flagged immediately and logged, simulating the behavior of
+    real astronomical survey pipelines.
+  </p>
+
+ <h2>5. Results</h2>
+
+<p>
+The anomaly detection pipeline identifies spectra that deviate significantly
+from the learned distribution of normal stellar spectra.
+Figure 1 compares a stable anomalous spectrum with a representative normal
+spectrum, while Figure 2 shows their separation in the learned latent space.
+</p>
+
+<figure>
+  <img src="images/plt1.png" alt="Anomalous vs normal stellar spectrum">
+  <figcaption>
+    <strong>Figure 1.</strong>
+    Comparison between an anomalous stellar spectrum (red) and a normal
+    stellar spectrum (blue). The anomalous spectrum shows distinct emission
+    features and flux behavior not well represented by the learned model.
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="images/plt2.png" alt="Latent space separation of spectra">
+  <figcaption>
+    <strong>Figure 2.</strong>
+    Latent space representation of stellar spectra after dimensionality
+    reduction. The anomalous spectrum (red) is clearly separated from the
+    cluster of normal spectra (blue), explaining its consistent detection
+    across multiple observation cycles.
+  </figcaption>
+</figure>
+
+
+  <h2>6. Discussion</h2>
+  <p>
+    Visual inspection shows that one candidate exhibits a structurally distinct
+    but coherent spectrum, while the other is dominated by noise and calibration
+    artifacts.
+    These results demonstrate the ability of the pipeline to detect both
+    astrophysically interesting objects and data-quality anomalies.
+  </p>
+
+  <h2>7. Limitations and Future Work</h2>
+  <p>
+    The current study is limited by dataset size and lack of physical confirmation.
+    Future work will scale the pipeline to larger surveys, incorporate Gaia XP
+    spectra, and integrate catalog cross-matching for validation.
+  </p>
+
+</article>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* ===== Global Page Styling ===== */
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #111;
+}
+
+/* ===== Article Container ===== */
+
+.paper {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 50px;
+  line-height: 1.65;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Headings ===== */
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 35px;
+  font-size: 1.5em;
+}
+
+/* ===== Author Block ===== */
+
+.authors {
+  text-align: center;
+  font-size: 0.95em;
+  margin-bottom: 30px;
+}
+
+/* ===== Abstract Styling ===== */
+
+.abstract {
+  background-color: #eeeeee;
+  padding: 18px;
+  border-left: 5px solid #444;
+  margin: 30px 0;
+  font-size: 0.95em;
+}
+
+/* ===== Figures ===== */
+
+figure {
+  margin: 35px 0;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+figcaption {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* ===== Paragraphs ===== */
+
+p {
+  margin-bottom: 16px;
+  text-align: justify;
+}
